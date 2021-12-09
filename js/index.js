@@ -89,3 +89,17 @@ const massobj = {
   css: 'world'};
 const result = Object.keys(massobj);
 console.log('Exercise 14: ' + result);
+
+
+
+//Function - Exercise 6
+const arrNumber = [12, 15, 20, 25, 59, 79];
+const average = function(){
+  let  result = 0;
+  let sum = 0;
+  for(let i=0; i<arrNumber.length; ++i){
+    sum +=arrNumber[i];
+  }
+    return  result = sum/arrNumber.length;
+}
+console.log('Function - Exercise 6: ' + average(arrNumber));
