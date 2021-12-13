@@ -90,16 +90,95 @@ const massobj = {
 const result = Object.keys(massobj);
 console.log('Exercise 14: ' + result);
 
+//Function - Exercise 1
+//Необходимо создать функцию hasElem, которая параметрами будет принимать массив и строку, и возвращать true, если строка есть в массиве, и false - если нет
+const getArr = ['Alena' , 'Misha' , 'Petia', 'Alena' ];
+const string = 'Alena';
 
+const hasElem = function(arr,string){
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] === string){
+      return true;
+    }
+  }
+  return false;
+}
+console.log('Function - Exercise 1: ' + hasElem(getArr,string));
+
+//Function - Exercise 2
+//Дан массив с числами. Проверьте, что в этом массиве есть указанное число. Если есть - вернуть true, а если нет - вернуть false.
+
+const arrCheck = [12, 15, 10, 25, 59, 79];
+
+const checkNumber = function(arrCheck,number){
+
+  for (let i = 0; i < arrCheck.length; i++) {
+    if(arrCheck[i] === number){
+      return true;
+    }
+  }
+  return false;
+}
+console.log('Function - Exercise 2: ' + checkNumber(arrCheck,7));
+
+//Function - Exercise 3
+//Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть -  вернуть true, а если нет - вернуть false.
+const sameNumbersArr = [5,134,4,4,10,12];
+const getSameNumber = function(sameNumbersArr){
+  for (let i = 0; i < sameNumbersArr.length; i++) {
+    if (sameNumbersArr[i] === sameNumbersArr[i-1]) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log('Function - Exercise 3: ' + getSameNumber(sameNumbersArr));
+
+//Function - Exercise 4
+//Заполните массив 10 случайными числами в диапазоне от 15 до 78. Math.random()
+
+function getRandomArr(min, max) {
+  const randomArr = [];
+
+   for (let i = 0; i < 10; i++) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; 
+     randomArr.push(randomNumber);
+   }
+
+   return randomArr;
+};
+console.log('Function - Exercise 4: ' + getRandomArr(15,78));
+
+//Function - Exercise 5
+//Дан массив 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число. 
+
+const myArr = [4, -2, 5, 19, -130, 0, 10];
+function getMinMaxNumber(myArr){
+  let max = myArr[0];
+  let min = myArr[0];
+
+  for(let i=0; i<myArr.length; i++){
+    if(myArr[i] > max) {
+      max = myArr[i];
+    } else if (myArr[i] < min) {
+      min = myArr[i];
+    }
+  }
+  return `max = ${max}; min = ${min}`;
+}
+console.log('Function - Exercise 5: ' + getMinMaxNumber(myArr));
 
 //Function - Exercise 6
+//Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
 const arrNumber = [12, 15, 20, 25, 59, 79];
+
 const average = function(){
   let  result = 0;
   let sum = 0;
+
   for(let i=0; i<arrNumber.length; ++i){
     sum +=arrNumber[i];
   }
-    return  result = sum/arrNumber.length;
-}
+  return  result = sum/arrNumber.length;
+};
 console.log('Function - Exercise 6: ' + average(arrNumber));
